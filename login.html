@@ -45,13 +45,13 @@
         <h2 id="heading">User LogIn</h2>
         <br>
         <div class="login_con">
-            <label> </label>
+            <label for="email"> </label>
             <br>
             <input class="email" id="email" type="email" placeholder="Email id" >
         
         </div><br>
         <div class="login_pas">
-            <label></label>
+            <label for="password"></label>
             <br>
            <input class="password" id="password" type="password" placeholder="Password">
         </div><br>
@@ -83,14 +83,9 @@ function validate(){
 let email=document.getElementById("email");
 let password=document.getElementById("password");
 if(email.value.trim()==""){
-  alert("email can't be empty");
+  alert("Email can't be empty");
   return false;
 }
-
-if(email.value.value()){
-    alert("type valid email id")
-    return false;
-  }
 if(password.value.trim()==""){
 alert("password can't be empty")
 return false;
@@ -102,6 +97,11 @@ if(password.value.length<=8)
 }
 return true;  
 }
+
+
+
+
+
 
 
 </script>
