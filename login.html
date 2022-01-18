@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="CSS/style.css">
     <title>Log In</title>
 </head>
-<body background="images/diagoona-bg-3.jpg" >
-    <div class="navbar navbar-expand-lg bg-transparent ">
+<body background="images/diagoona-bg-3.jpg">
+    <div class="navbar navbar-expand-lg bg-transparent">
         <a class="navbar-brand" href="index.html"><img src="images/kerala-tourism-title.png"></a>
              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,19 +41,19 @@
             </div>
           </div>
     <!--Login Form-->
-    <form action="#" class="login">
+    <form action="./districts.html" class="login" id="login" onsubmit="return validate()" >
         <h2 id="heading">User LogIn</h2>
         <br>
         <div class="login_con">
             <label> </label>
             <br>
-            <input class="em" type="text" placeholder="Email id or Phone number">
+            <input class="email" id="email" type="email" placeholder="Email id" >
         
         </div><br>
         <div class="login_pas">
             <label></label>
             <br>
-           <input class="pas" type="password" placeholder="Password">
+           <input class="password" id="password" type="password" placeholder="Password">
         </div><br>
         <div>
             <button id="login_but" >Log In</button>
@@ -77,5 +77,33 @@
     
     <!--/login Form-->
 </div>
+<script>
+
+function validate(){
+let email=document.getElementById("email");
+let password=document.getElementById("password");
+if(email.value.trim()==""){
+  alert("email can't be empty");
+  return false;
+}
+
+if(email.value.value()){
+    alert("type valid email id")
+    return false;
+  }
+if(password.value.trim()==""){
+alert("password can't be empty")
+return false;
+}
+if(password.value.length<=8)
+{
+  alert("password should contain minimum 8 letters")
+  return false;
+}
+return true;  
+}
+
+
+</script>
 </body>
 </html>
