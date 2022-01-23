@@ -329,13 +329,13 @@ progress.pb20[value]::-webkit-progress-value {
 background-color: rgba(7, 255, 90, 0.8);
 }
 progress.pb40[value]::-webkit-progress-value {
-background-color: rgba(250, 128, 6, 0.8); 
+background-color:rgba(7, 255, 90, 0.8) ; 
 }
 progress.pb60[value]::-webkit-progress-value {
 background-color: rgb(255, 126, 6); 
 }
 progress.pb80[value]::-webkit-progress-value {
-background-color: rgba(242, 5, 5, 0.966);
+background-color: rgb(255, 126, 6);
 }
 progress.pb100[value]::-webkit-progress-value {
 background-color: rgba(250, 7, 7, 0.8); 
