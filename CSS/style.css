@@ -4,25 +4,15 @@
     
 }
 
-
-
-
 body{
     width: 100%;
     height: 100%;
     background-position: cover;
     background-repeat: no-repeat;
     background-attachment:fixed;
-    overflow-x: hidden;
-   
-   
+    overflow-x: hidden;  
 }
-body{
-    overflow-x:hidden;
-    
-    
-   
-   }
+
    .ker{
      text-align: center;
      justify-content: center;
@@ -118,49 +108,60 @@ body{
 }*/
 #heading{
     color: rgb(255, 255, 255);
+    align-items: center;
     
 }
 
 .login{
     
     position:center;
-    margin-left:20%;
-    margin-right: 20%;
-    margin-top:10%;
+   /* margin-left:20%;
+    margin-right: 20%; */
+    margin-top:6%;
     
 }
 .email{
-    width:15em;
-    height: 35px;
+    width:18em;
+    height: 40px;
     margin-bottom: -5px;
-    
-}
-input:focus{
-    outline: dodgerblue;
+    border-radius: 10px;
     border-color: dodgerblue;
     
 }
+input:focus{
+    outline: rgb(56, 1, 255);
+    border-color: rgb(119, 0, 255);
+    
+}
 .password{
-    width:15em;
-    height: 35px;
+    width:18em;
+    height: 40px;
     margin-top:-6px;
+    border-radius: 10px;
+    border-color: dodgerblue;
 }
 .forgot{
     margin-left:18%;
+    margin-top: 2%;
     
     
     
 }
 #login_but{
-    width: 15em;
-    height:35px;
+    width: 18em;
+    height:40px;
     background-color: dodgerblue;
-    border: dodgerblue;
+    border-color: dodgerblue;
+    border-radius: 10px;
+}
+#login_but:hover{
+  background-color: rgb(0, 255, 21);
 }
 p{
     color:white;
     
 }
+
 
 .form{
 
@@ -250,6 +251,100 @@ p{
     background:white ;
     color:#c4302b ;
 }
+
+
+/*     signup        */
+
+
+.form{
+     
+  color:rgb(201,228, 252) ;
+  align-items: center;
+  justify-content: center;
+  
+}
+.fas { 
+color: #2c2b2b;
+
+}
+
+.fa-eye {
+margin: 0 6px; 
+cursor: pointer;
+color: rgb(39, 230, 14); 
+}
+.fa-eye-slash {
+margin: 0 6px; 
+cursor: pointer;
+color: rgb(182, 50, 50); 
+font-size: .95em; 
+}
+.fa-envelope,.fa-mobile,.fa-lock{
+color: rgb(201,228, 252);
+}
+/*#pass {
+
+align-items: center;
+display: flex;
+
+border: solid 1px #9b9b9b; 
+background-color: #fff; 
+border-radius: 6px;
+} */
+
+.form-labelp{
+display:block;
+border-radius: 4px;
+}
+
+.form-controlc{
+width: 88%;
+height: 78%;
+border-radius: 5%;
+} 
+/*#strength{
+display:none;
+}*/
+progress#strength {
+width: 60%; 
+height: 8px;
+border: solid 1px #ccc;
+border-radius: 6px;
+background-color: #fff;
+margin: .2em .2em .2em 0;
+}
+
+progress[value]::-webkit-progress-value {
+background-image:
+ -webkit-linear-gradient(-45deg, 
+             transparent 33%, rgba(0, 0, 0, .1) 33%, 
+             rgba(0,0, 0, .1) 66%, transparent 66%),
+ -webkit-linear-gradient(top, 
+             rgba(255, 255, 255, .25), 
+             rgba(0, 0, 0, .25));
+border-radius: 2px; 
+background-size: 35px 20px, 100% 100%, 100% 100%; 
+}
+progress.pb20[value]::-webkit-progress-value {
+background-color: rgba(7, 255, 90, 0.8);
+}
+progress.pb40[value]::-webkit-progress-value {
+background-color: rgba(250, 128, 6, 0.8); 
+}
+progress.pb60[value]::-webkit-progress-value {
+background-color: rgb(255, 126, 6); 
+}
+progress.pb80[value]::-webkit-progress-value {
+background-color: rgba(242, 5, 5, 0.966);
+}
+progress.pb100[value]::-webkit-progress-value {
+background-color: rgba(250, 7, 7, 0.8); 
+}
+#strength{
+display: none;
+}
+
+/*sign up end*/
 
 
 

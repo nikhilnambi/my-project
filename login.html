@@ -9,8 +9,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
     <title>Log In</title>
+    <style>
+
+    form{
+      text-align: center;
+       
+      }
+    .fa-eye {
+       margin: 0 6px; 
+       cursor: pointer;
+       color: rgb(55, 226, 69); 
+    
+     }
+
+    .fa-eye-slash {
+       margin: 0 6px; 
+       cursor: pointer;
+       color: rgb(206, 16, 16); 
+      font-size: .9em; 
+      }
+    .check{
+       margin-left: 0%;
+      }
+    .login_que{
+       margin-top: -3%;
+       margin-left: -10%;
+      }
+    .loginsign{
+      margin-left: -10%;
+
+      }
+      
+    </style>
 </head>
 <body background="images/diagoona-bg-3.jpg">
     <div class="navbar navbar-expand-lg bg-transparent">
@@ -41,37 +74,36 @@
             </div>
           </div>
     <!--Login Form-->
-    <form action="./districts.html" class="login" id="login" onsubmit="return validate()" >
+   <form name="myform" action="./districts.html" class="login" id="login" onsubmit="return validate();" >
         <h2 id="heading">User LogIn</h2>
         <br>
-        <div class="login_con">
-            <label for="email"> </label>
+            <label for="email"  class="login_con"> </label>
             <br>
-            <input class="email" id="email" type="email" placeholder="Email id" >
-        
-        </div><br>
-        <div class="login_pas">
-            <label for="password"></label>
+            <input class="email" id="email" type="email" required placeholder="Email id"  >
+           
             <br>
-           <input class="password" id="password" type="password" placeholder="Password">
-        </div><br>
-        <div>
-            <button id="login_but" >Log In</button>
-        </div><br>
-        <div class="forgot">
-            <p>
+            <div>
+            <label for="password"class="login_pas"></label>
+            <br><br>
+           <input class="password" id="password" type="password" required placeholder="Password">
+           <i class="fas fa-eye eyeIcon" style="margin-left:-30px;"></i>
+          </div>
+           <br>
+            <button id="login_but" >Log In</button><br><br>
+            <input type="checkbox" class="check" checked="checked">
+            <span class="Text" style="color: aliceblue;">Remember me</span>    
+            <p class="forgot">
                <a href="#">Forgot Password </a>
-            </p>
-        </div>
-        <div class="login_que">
-            <p>
+            </p><br>
+        
+            <p class="login_que">
                 Need an account?
             </p>
-        </div>
-        <a  href="signUp.html">Sign Up</a>
+        
+        <a class="loginsign" href="signUp.html">Sign Up</a>
 
     </form>
-   </div>
+   
 
     
     
@@ -82,28 +114,53 @@
 function validate(){
 let email=document.getElementById("email");
 let password=document.getElementById("password");
-if(email.value.trim()==""){
-  alert("Email can't be empty");
-  return false;
+
+  if(email.value.trim()=="")
+     {
+       alert("Email can't be empty");
+       return false;
+     }
+var regexp = /^([A-Za-z0-9\.-]+)@([A-Za-z\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$/;
+    
+  if(regexp.test(email.value)!="1")
+     {
+        alert("Email Is Invalid");
+        return false;
+     }
+  if(password.value.trim()=="")
+    {
+        alert("password can't be empty")
+        return false;
+    }
+  if(password.value.length<=8)
+    {
+        alert("password should contain minimum 8 letters")
+        return false;
+    }
+        return true;  
 }
-if(password.value.trim()==""){
-alert("password can't be empty")
-return false;
-}
-if(password.value.length<=8)
-{
-  alert("password should contain minimum 8 letters")
-  return false;
-}
-return true;  
-}
 
 
+    
 
+const visToggle = document.querySelector('.eyeIcon');
 
+const input = document.querySelector('.password');
 
+var password = true;
 
-
+visToggle.addEventListener('click', function(){
+         if(password) {
+             input.setAttribute('type','text'); 
+             visToggle.classList.remove('fa-eye');
+             visToggle.classList.add('fa-eye-slash');
+         } else {
+             input.setAttribute('type','password');
+             visToggle.classList.remove('fa-eye-slash');
+             visToggle.classList.add('fa-eye');
+         }
+    password = !password;
+      }); 
 </script>
 </body>
 </html>
